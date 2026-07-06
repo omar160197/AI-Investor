@@ -398,3 +398,107 @@ export const netWorth = {
     { name: "Real Estate", value: 94350, color: "var(--chart-3)" },
   ],
 }
+
+// ── Copilot examples & showcase ────────────────────────────────────────
+export interface CopilotExample {
+  id: string
+  type: "capability" | "community"
+  title: string
+  description: string
+  query?: string
+  author?: string
+  timestamp?: string
+  category: string
+  icon: string
+  likes?: number
+  replies?: number
+}
+
+export const copilotExamples: CopilotExample[] = [
+  // Capabilities
+  {
+    id: "cap-1",
+    type: "capability",
+    title: "Portfolio Analysis",
+    description: "Get detailed fundamentals, technical analysis, and risk assessment for any stock or portfolio.",
+    query: "Give me a comprehensive analysis of NVDA including PE ratio, growth trends, and risks",
+    category: "Analysis",
+    icon: "chart-bar",
+  },
+  {
+    id: "cap-2",
+    type: "capability",
+    title: "Portfolio Generation",
+    description: "Describe your investment goals and risk tolerance. AI generates a tailored portfolio automatically.",
+    query: "Build a portfolio for long-term growth with $50k and moderate risk tolerance",
+    category: "Portfolio Building",
+    icon: "wand-2",
+  },
+  {
+    id: "cap-3",
+    type: "capability",
+    title: "Market Insights",
+    description: "Analyze market trends, sector performance, and identify opportunities based on current data.",
+    query: "What are the hottest semiconductor stocks right now and why?",
+    category: "Market Research",
+    icon: "trending-up",
+  },
+  {
+    id: "cap-4",
+    type: "capability",
+    title: "Strategy Comparison",
+    description: "Compare different investment strategies side-by-side with historical performance data.",
+    query: "Compare dividend investing vs growth investing for my goals",
+    category: "Education",
+    icon: "git-compare",
+  },
+  // Community examples
+  {
+    id: "comm-1",
+    type: "community",
+    title: "Top 5 AI stocks for 2025",
+    description: "AI is reshaping technology. Here's my framework for identifying AI winners with strong fundamentals and growth trajectories.",
+    author: "Alex Chen",
+    timestamp: "2h ago",
+    category: "Strategy",
+    icon: "sparkles",
+    likes: 342,
+    replies: 28,
+  },
+  {
+    id: "comm-2",
+    type: "community",
+    title: "Fed Rate Decision Impact Analysis",
+    description: "Breaking down what a 0.25% rate cut means for your portfolio and which sectors benefit most.",
+    author: "Morgan Finance",
+    timestamp: "4h ago",
+    category: "Market Analysis",
+    icon: "alert-circle",
+    likes: 521,
+    replies: 67,
+  },
+  {
+    id: "comm-3",
+    type: "community",
+    title: "My journey from $10k to $100k portfolio",
+    description: "Sharing lessons learned and strategy shifts that helped me achieve 10x returns over 3 years.",
+    author: "Jamie Rodriguez",
+    timestamp: "1d ago",
+    category: "Education",
+    icon: "award",
+    likes: 1203,
+    replies: 142,
+  },
+  {
+    id: "comm-4",
+    type: "community",
+    title: "Technical Analysis: Support & Resistance Levels",
+    description: "A practical guide to identifying key price levels and using them for entry/exit decisions on your trades.",
+    author: "Prof. Trading",
+    timestamp: "1d ago",
+    category: "Technical",
+    icon: "activity",
+    likes: 689,
+    replies: 54,
+  },
+]

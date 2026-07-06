@@ -18,6 +18,7 @@ import { SmartMoney } from "@/components/smart-money"
 import { PredictionMarkets } from "@/components/prediction-markets"
 import { Watchlist } from "@/components/watchlist"
 import { NetWorth } from "@/components/net-worth"
+import { ExploreCopilot } from "@/components/explore-copilot"
 
 export default function Page() {
   return (
@@ -34,6 +35,7 @@ export default function Page() {
             <div className="min-w-0 space-y-6">
               <PortfolioHero />
               <QuickStart />
+              <ExploreCopilot />
               <MarketMovers />
               <SectorHeatmap />
               <AiAssistant />
