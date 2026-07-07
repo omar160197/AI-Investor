@@ -34,6 +34,18 @@ export const marketIndices: MarketIndex[] = [
   { symbol: "VIX", name: "Volatility", value: "13.92", change: -3.6, data: spark(17, 24, "down") },
 ]
 
+export interface Portfolio {
+  id: string
+  name: string
+  creator: string
+  description: string
+  type: "Personal" | "Community" | "Curated"
+  performance: number
+  holdings: number
+  value: string
+  diversification: string
+}
+
 export interface PortfolioPoint {
   label: string
   value: number
@@ -53,6 +65,97 @@ export const portfolioSummary = {
   allTimeReturnPct: 1416.7,
   bestPerformer: "Savings",
 }
+
+export const portfolios: Portfolio[] = [
+  {
+    id: "1",
+    name: "Savings",
+    creator: "You",
+    description: "Conservative portfolio focused on stable dividend-paying stocks and bonds. Ideal for long-term wealth building.",
+    type: "Personal",
+    performance: 12.34,
+    holdings: 8,
+    value: "89,820",
+    diversification: "8 sectors",
+  },
+  {
+    id: "2",
+    name: "Tech Growth",
+    creator: "You",
+    description: "High-growth technology stocks targeting 15-20% annual returns. Heavy exposure to AI and semiconductor leaders.",
+    type: "Personal",
+    performance: 23.56,
+    holdings: 12,
+    value: "156,300",
+    diversification: "3 sectors",
+  },
+  {
+    id: "3",
+    name: "Dividend Income",
+    creator: "Sarah Chen",
+    description: "Curated portfolio of high-dividend yield stocks. Generates passive income with 4.5% yield.",
+    type: "Community",
+    performance: 8.92,
+    holdings: 15,
+    value: "124,500",
+    diversification: "10 sectors",
+  },
+  {
+    id: "4",
+    name: "Global Markets Mix",
+    creator: "You",
+    description: "International exposure with mix of developed and emerging markets. Includes ETFs and individual stocks.",
+    type: "Personal",
+    performance: -2.15,
+    holdings: 9,
+    value: "67,420",
+    diversification: "5 countries",
+  },
+  {
+    id: "5",
+    name: "Healthcare Innovation",
+    creator: "Dr. Michael Park",
+    description: "Focused on healthcare and biotech companies with strong R&D pipelines. Higher risk, higher reward strategy.",
+    type: "Curated",
+    performance: 18.73,
+    holdings: 11,
+    value: "98,750",
+    diversification: "6 sectors",
+  },
+  {
+    id: "6",
+    name: "Emerging Markets Growth",
+    creator: "You",
+    description: "Emerging market stocks and funds focusing on e-commerce, fintech, and consumer sectors.",
+    type: "Personal",
+    performance: 15.42,
+    holdings: 14,
+    value: "110,200",
+    diversification: "12 countries",
+  },
+  {
+    id: "7",
+    name: "Sustainable Investing",
+    creator: "Emma Rodriguez",
+    description: "ESG-focused portfolio of environmentally responsible companies. Filter by sustainability metrics.",
+    type: "Community",
+    performance: 11.08,
+    holdings: 20,
+    value: "142,800",
+    diversification: "9 sectors",
+  },
+  {
+    id: "8",
+    name: "Value Bargain Hunt",
+    creator: "Warren Collector",
+    description: "Undervalued companies trading below intrinsic value. Long-term value investing approach.",
+    type: "Curated",
+    performance: 9.54,
+    holdings: 16,
+    value: "105,600",
+    diversification: "8 sectors",
+  },
+]
 
 export interface QuickAction {
   title: string
