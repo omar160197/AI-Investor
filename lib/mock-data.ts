@@ -39,11 +39,12 @@ export interface Portfolio {
   name: string
   creator: string
   description: string
-  type: "Personal" | "Community" | "Curated"
+  type: "Personal" | "Community" | "Curated" | "Political"
   performance: number
   holdings: number
   value: string
   diversification: string
+  data: number[]
 }
 
 export interface PortfolioPoint {
@@ -77,6 +78,7 @@ export const portfolios: Portfolio[] = [
     holdings: 8,
     value: "89,820",
     diversification: "8 sectors",
+    data: spark(1, 24, "up"),
   },
   {
     id: "2",
@@ -88,6 +90,7 @@ export const portfolios: Portfolio[] = [
     holdings: 12,
     value: "156,300",
     diversification: "3 sectors",
+    data: spark(2, 24, "up"),
   },
   {
     id: "3",
@@ -99,6 +102,7 @@ export const portfolios: Portfolio[] = [
     holdings: 15,
     value: "124,500",
     diversification: "10 sectors",
+    data: spark(3, 24, "up"),
   },
   {
     id: "4",
@@ -110,6 +114,7 @@ export const portfolios: Portfolio[] = [
     holdings: 9,
     value: "67,420",
     diversification: "5 countries",
+    data: spark(4, 24, "down"),
   },
   {
     id: "5",
@@ -121,6 +126,7 @@ export const portfolios: Portfolio[] = [
     holdings: 11,
     value: "98,750",
     diversification: "6 sectors",
+    data: spark(5, 24, "up"),
   },
   {
     id: "6",
@@ -132,6 +138,7 @@ export const portfolios: Portfolio[] = [
     holdings: 14,
     value: "110,200",
     diversification: "12 countries",
+    data: spark(6, 24, "up"),
   },
   {
     id: "7",
@@ -143,6 +150,7 @@ export const portfolios: Portfolio[] = [
     holdings: 20,
     value: "142,800",
     diversification: "9 sectors",
+    data: spark(7, 24, "up"),
   },
   {
     id: "8",
@@ -154,6 +162,31 @@ export const portfolios: Portfolio[] = [
     holdings: 16,
     value: "105,600",
     diversification: "8 sectors",
+    data: spark(8, 24, "up"),
+  },
+  {
+    id: "9",
+    name: "Nancy Pelosi Political Portfolio",
+    creator: "Nancy Pelosi",
+    description: "High-profile public disclosure portfolio reconstructed from congressional filings. Tracks insider trades.",
+    type: "Political",
+    performance: 245.6,
+    holdings: 24,
+    value: "892,300",
+    diversification: "12 sectors",
+    data: spark(21, 24, "up"),
+  },
+  {
+    id: "10",
+    name: "Wasserman Schultz Portfolio",
+    creator: "Debbie Wasserman Schultz",
+    description: "Public disclosure portfolio tracking congressional trades and investment patterns.",
+    type: "Political",
+    performance: 162.9,
+    holdings: 18,
+    value: "612,400",
+    diversification: "9 sectors",
+    data: spark(23, 24, "up"),
   },
 ]
 

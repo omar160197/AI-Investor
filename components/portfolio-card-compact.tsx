@@ -4,6 +4,7 @@ import { TrendingUp, TrendingDown, ExternalLink } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Sparkline } from "@/components/sparkline"
 import type { Portfolio } from "@/lib/mock-data"
 import { cn } from "@/lib/utils"
 
@@ -64,17 +65,8 @@ export function PortfolioCardCompact({ portfolio }: PortfolioCardCompactProps) {
         </div>
 
         {/* Sparkline Chart */}
-        <div className="h-8 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 rounded-md flex items-end justify-center gap-0.5 p-1.5">
-          {[35, 40, 38, 45, 50, 48, 55].map((height, i) => (
-            <div
-              key={i}
-              className={cn(
-                "flex-1 rounded-sm transition-all",
-                i === 6 ? "bg-primary" : "bg-primary/70"
-              )}
-              style={{ height: `${(height / 55) * 100}%`, minHeight: "2px" }}
-            />
-          ))}
+        <div className="h-8">
+          <Sparkline data={portfolio.data} positive={isPositive} height={32} />
         </div>
 
         {/* Action Button */}

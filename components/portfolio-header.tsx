@@ -1,6 +1,6 @@
 "use client"
 
-import { Search, Plus, Filter } from "lucide-react"
+import { Search, Plus, Filter, Upload, Link2, RefreshCw } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
@@ -13,10 +13,24 @@ export function PortfolioHeader() {
           <h1 className="text-3xl font-bold tracking-tight">Portfolios</h1>
           <p className="mt-1 text-muted-foreground">Manage and track all your investment portfolios</p>
         </div>
-        <Button className="gap-2">
-          <Plus className="size-4" />
-          New Portfolio
-        </Button>
+        <div className="flex flex-wrap gap-2 justify-end">
+          <Button variant="outline" size="sm" className="gap-2">
+            <Upload className="size-4" />
+            Import CSV
+          </Button>
+          <Button variant="outline" size="sm" className="gap-2">
+            <Link2 className="size-4" />
+            Connect brokerage
+          </Button>
+          <Button variant="outline" size="sm" className="gap-2">
+            <RefreshCw className="size-4" />
+            Sync now
+          </Button>
+          <Button className="gap-2">
+            <Plus className="size-4" />
+            New Portfolio
+          </Button>
+        </div>
       </div>
 
       {/* Search and Filters */}
