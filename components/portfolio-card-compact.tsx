@@ -17,66 +17,73 @@ export function PortfolioCardCompact({ portfolio }: PortfolioCardCompactProps) {
 
   return (
     <Card className="group relative overflow-hidden transition-all hover:shadow-lg hover:border-primary/50">
-      <div className="p-5 space-y-4">
+      <div className="p-3 space-y-2">
         {/* Header */}
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <h3 className="font-bold truncate">{portfolio.name}</h3>
+            <h3 className="text-sm font-bold truncate">{portfolio.name}</h3>
             <p className="text-xs text-muted-foreground truncate">{portfolio.creator}</p>
           </div>
-          <Badge variant="outline" className="text-xs">{portfolio.type}</Badge>
+          <Badge variant="outline" className="text-xs whitespace-nowrap">{portfolio.type}</Badge>
         </div>
 
         {/* Description */}
-        <p className="text-xs text-muted-foreground line-clamp-2">
+        <p className="text-xs text-muted-foreground line-clamp-2 leading-snug">
           {portfolio.description}
         </p>
 
         {/* Compact Metrics */}
-        <div className="grid grid-cols-4 gap-2 py-2 border-y">
+        <div className="grid grid-cols-4 gap-1.5 py-1.5 border-y text-center">
           {/* Return % */}
-          <div className="text-center">
+          <div>
             <p className="text-xs text-muted-foreground mb-0.5">Return</p>
-            <p className={cn(
-              "text-sm font-bold",
-              isPositive ? "text-green-600" : "text-red-600"
-            )}>
-              {isPositive ? "+" : ""}{portfolio.performance}%
-            </p>
+            <div className="flex items-center justify-center gap-0.5">
+              {isPositive ? (
+                <TrendingUp className="size-3 text-green-600" />
+              ) : (
+                <TrendingDown className="size-3 text-red-600" />
+              )}
+              <p className={cn(
+                "text-xs font-bold",
+                isPositive ? "text-green-600" : "text-red-600"
+              )}>
+                {Math.abs(portfolio.performance).toFixed(1)}%
+              </p>
+            </div>
           </div>
 
           {/* Holdings */}
-          <div className="text-center">
+          <div>
             <p className="text-xs text-muted-foreground mb-0.5">Holdings</p>
-            <p className="text-sm font-bold">{portfolio.holdings}</p>
+            <p className="text-xs font-bold">{portfolio.holdings}</p>
           </div>
 
           {/* Value */}
-          <div className="text-center">
+          <div>
             <p className="text-xs text-muted-foreground mb-0.5">Value</p>
-            <p className="text-sm font-bold">${portfolio.value}</p>
+            <p className="text-xs font-bold">${portfolio.value}</p>
           </div>
 
-          {/* Volatility */}
-          <div className="text-center">
+          {/* Diversification */}
+          <div>
             <p className="text-xs text-muted-foreground mb-0.5">Div</p>
-            <p className="text-sm font-bold">{portfolio.diversification}</p>
+            <p className="text-xs font-bold">{portfolio.diversification}</p>
           </div>
         </div>
 
         {/* Sparkline Chart */}
-        <div className="h-8">
-          <Sparkline data={portfolio.data} positive={isPositive} height={32} />
+        <div className="h-7">
+          <Sparkline data={portfolio.data} positive={isPositive} height={28} />
         </div>
 
         {/* Action Button */}
         <Button
           variant="ghost"
           size="sm"
-          className="w-full gap-2 justify-center text-xs group-hover:bg-primary/10"
+          className="w-full gap-1 justify-center text-xs h-7 group-hover:bg-primary/10"
         >
           View Details
-          <ExternalLink className="size-3" />
+          <ExternalLink className="size-2.5" />
         </Button>
       </div>
     </Card>

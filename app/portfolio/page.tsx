@@ -21,16 +21,16 @@ export default function PortfolioPage() {
 
   return (
     <AppWrapper>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-6 lg:px-8 space-y-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-6 lg:px-8 space-y-6">
         {/* Header */}
         <PortfolioHeader />
 
         {/* Featured Portfolio */}
         {featuredPortfolio && (
-          <section>
-            <div className="mb-4">
-              <h2 className="text-xl font-bold tracking-tight">Your Top Portfolio</h2>
-              <p className="text-sm text-muted-foreground">Performance overview of your best performing portfolio</p>
+          <section className="space-y-2">
+            <div>
+              <h2 className="text-lg font-bold tracking-tight">Your Top Portfolio</h2>
+              <p className="text-xs text-muted-foreground">Performance overview of your best performing portfolio</p>
             </div>
             <PortfolioHeroCard portfolio={featuredPortfolio} />
           </section>
@@ -38,10 +38,10 @@ export default function PortfolioPage() {
 
         {/* My Portfolios */}
         {personalPortfolios.length > 0 && (
-          <section>
-            <div className="mb-4">
+          <section className="space-y-2">
+            <div>
               <h2 className="text-lg font-bold tracking-tight">My Portfolios</h2>
-              <p className="text-sm text-muted-foreground">{personalPortfolios.length} personal portfolio{personalPortfolios.length !== 1 ? 's' : ''}</p>
+              <p className="text-xs text-muted-foreground">{personalPortfolios.length} personal portfolio{personalPortfolios.length !== 1 ? 's' : ''}</p>
             </div>
             <PortfolioGrid portfolios={personalPortfolios} />
           </section>
@@ -49,10 +49,10 @@ export default function PortfolioPage() {
 
         {/* Curated Portfolios */}
         {curatedPortfolios.length > 0 && (
-          <section>
-            <div className="mb-4">
+          <section className="space-y-2">
+            <div>
               <h2 className="text-lg font-bold tracking-tight">Curated Portfolios</h2>
-              <p className="text-sm text-muted-foreground">Expert-managed strategies and themed portfolios</p>
+              <p className="text-xs text-muted-foreground">Expert-managed strategies and themed portfolios</p>
             </div>
             <PortfolioGrid portfolios={curatedPortfolios} />
           </section>
@@ -60,10 +60,10 @@ export default function PortfolioPage() {
 
         {/* Community Portfolios */}
         {communityPortfolios.length > 0 && (
-          <section>
-            <div className="mb-4">
+          <section className="space-y-2">
+            <div>
               <h2 className="text-lg font-bold tracking-tight">Community Portfolios</h2>
-              <p className="text-sm text-muted-foreground">Strategies shared by our community members</p>
+              <p className="text-xs text-muted-foreground">Strategies shared by our community members</p>
             </div>
             <PortfolioGrid portfolios={communityPortfolios} />
           </section>
@@ -71,10 +71,10 @@ export default function PortfolioPage() {
 
         {/* Political Portfolios */}
         {politicalPortfolios.length > 0 && (
-          <section>
-            <div className="mb-4">
+          <section className="space-y-2">
+            <div>
               <h2 className="text-lg font-bold tracking-tight">Political Portfolios</h2>
-              <p className="text-sm text-muted-foreground">Public disclosure portfolios from political figures</p>
+              <p className="text-xs text-muted-foreground">Public disclosure portfolios from political figures</p>
             </div>
             <PortfolioGrid portfolios={politicalPortfolios} />
           </section>
