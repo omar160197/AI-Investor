@@ -7,11 +7,11 @@ import {
   PieChart,
   Star,
   Gamepad2,
-  Sparkles,
   Bell,
   Moon,
   LogOut,
   TrendingUp,
+  MessageCircle,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
@@ -22,10 +22,13 @@ const navItems = [
   { label: "Portfolio", icon: PieChart },
   { label: "Primary", icon: Star },
   { label: "Fantasy", icon: Gamepad2 },
-  { label: "AI Assistant", icon: Sparkles },
 ]
 
-export function AppSidebar() {
+interface AppSidebarProps {
+  onOpenChat?: () => void
+}
+
+export function AppSidebar({ onOpenChat }: AppSidebarProps = {}) {
   const [active, setActive] = useState("Home")
 
   return (
@@ -40,6 +43,15 @@ export function AppSidebar() {
       </div>
 
       <nav className="flex flex-1 flex-col gap-1 px-3 py-2">
+        {/* AI Chat button - always at the top */}
+        <button
+          onClick={onOpenChat}
+          className="mb-2 flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+        >
+          <MessageCircle className="size-4.5" />
+          AI Chat
+        </button>
+
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = active === item.label
