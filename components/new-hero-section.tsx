@@ -1,16 +1,14 @@
 'use client'
 
 import { Sparkles } from 'lucide-react'
+import { AnimatedDataStreams } from '@/components/animated-data-streams'
 
 export function NewHeroSection() {
   return (
-    <div className="relative space-y-6">
-      {/* Background particles */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-20 left-10 w-1 h-1 bg-primary/20 rounded-full" />
-        <div className="absolute top-32 right-32 w-1 h-1 bg-primary/20 rounded-full" />
-        <div className="absolute bottom-32 left-1/3 w-1 h-1 bg-primary/20 rounded-full" />
-        <div className="absolute top-1/4 right-1/4 w-0.5 h-0.5 bg-primary/10 rounded-full" />
+    <div className="relative space-y-6 overflow-hidden rounded-xl">
+      {/* Animated data streams background */}
+      <div className="absolute inset-0 -z-10 h-full">
+        <AnimatedDataStreams />
       </div>
 
       {/* AI Copilot Badge */}
