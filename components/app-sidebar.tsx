@@ -12,16 +12,17 @@ import {
   LogOut,
   TrendingUp,
   MessageCircle,
+  Lock,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 const navItems = [
-  { label: "Home", icon: Home },
-  { label: "Bank", icon: Landmark },
-  { label: "Portfolio", icon: PieChart },
-  { label: "Primary", icon: Star },
-  { label: "Fantasy", icon: Gamepad2 },
+  { label: "Home", icon: Home, requiresConnection: false },
+  { label: "Bank", icon: Landmark, requiresConnection: true },
+  { label: "Portfolio", icon: PieChart, requiresConnection: true },
+  { label: "Primary", icon: Star, requiresConnection: false },
+  { label: "Fantasy", icon: Gamepad2, requiresConnection: false },
 ]
 
 interface AppSidebarProps {
@@ -60,14 +61,18 @@ export function AppSidebar({ onOpenChat }: AppSidebarProps = {}) {
               key={item.label}
               onClick={() => setActive(item.label)}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors group relative",
                 isActive
                   ? "bg-sidebar-accent text-foreground"
                   : "text-muted-foreground hover:bg-sidebar-accent/60 hover:text-foreground",
               )}
+              title={item.requiresConnection ? "Connect your bank or broker first" : ""}
             >
               <Icon className={cn("size-4.5", isActive && "text-primary")} />
-              {item.label}
+              <span className="flex-1">{item.label}</span>
+              {item.requiresConnection && (
+                <Lock className="size-3 text-muted-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+              )}
             </button>
           )
         })}
